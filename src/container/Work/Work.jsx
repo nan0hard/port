@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client, urlFor } from "../../client";
+import { urlFor, client } from "../../client";
 import "./Work.scss";
 
 const Work = () => {
-	const [activeFilter, setActiveFilter] = useState("All");
-	const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 	const [works, setWorks] = useState([]);
 	const [filterWork, setFilterWork] = useState([]);
+	const [activeFilter, setActiveFilter] = useState("All");
+	const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
 	useEffect(() => {
 		const query = '*[_type == "works"]';
@@ -39,10 +39,11 @@ const Work = () => {
 	return (
 		<>
 			<h2 className="head-text">
-				My Creative <span>Portfolio</span>
+				My Creative <span>Portfolio</span> Section
 			</h2>
+
 			<div className="app__work-filter">
-				{["UI/UX", "Web App", "Mobile App", "React Js", "All"].map(
+				{["UI/UX", "Web App", "Mobile App", "React JS", "All"].map(
 					(item, index) => (
 						<div
 							key={index}
@@ -78,11 +79,9 @@ const Work = () => {
 							>
 								<a href={work.projectLink} target="_blank" rel="noreferrer">
 									<motion.div
-										whileInview={{ scale: [0, 1] }}
+										whileInView={{ scale: [0, 1] }}
 										whileHover={{ scale: [1, 0.9] }}
-										transition={{
-											duration: 0.25,
-										}}
+										transition={{ duration: 0.25 }}
 										className="app__flex"
 									>
 										<AiFillEye />
@@ -90,11 +89,9 @@ const Work = () => {
 								</a>
 								<a href={work.codeLink} target="_blank" rel="noreferrer">
 									<motion.div
-										whileInview={{ scale: [0, 1] }}
+										whileInView={{ scale: [0, 1] }}
 										whileHover={{ scale: [1, 0.9] }}
-										transition={{
-											duration: 0.25,
-										}}
+										transition={{ duration: 0.25 }}
 										className="app__flex"
 									>
 										<AiFillGithub />

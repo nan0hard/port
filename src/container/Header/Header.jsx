@@ -2,8 +2,9 @@ import React from "react";
 import "./Header.scss";
 
 import { motion } from "framer-motion";
-import { images } from "../../constants";
+import Typical from "react-typical";
 
+import { images } from "../../constants";
 import { AppWrap } from "../../wrapper";
 
 const sclaeVariants = {
@@ -35,8 +36,19 @@ const Header = () => {
 					</div>
 
 					<div className="tag-cmp app__flex">
-						<p className="p-text">Web Developer</p>
-						<p className="p-text">Software Engineer</p>
+						<p className="p-text">
+							<Typical
+								loop={Infinity}
+								steps={[
+									"Application Development Associate",
+									500,
+									"Web Developer",
+									1000,
+									"Engineer",
+									1000,
+								]}
+							/>
+						</p>
 					</div>
 				</div>
 			</motion.div>
@@ -61,7 +73,7 @@ const Header = () => {
 				whileInView={sclaeVariants.whileInView}
 				className="app__header-circles"
 			>
-				{[images.flutter, images.redux, images.sass].map((circle, index) => (
+				{[images.flutter, images.react, images.sass].map((circle, index) => (
 					<div className="circle-cmp app__flex" key={`circle-${index}`}>
 						<img src={circle} alt="circle" />
 					</div>
