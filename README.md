@@ -12,3 +12,5 @@ Use npm start to start the server.
 
 For the backend part
 use command `sanity start` to start the server.
+
+You can view my portfolio here - https://nanohard.netlify.app/
