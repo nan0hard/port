@@ -40,7 +40,7 @@ const Header = () => {
 							<Typical
 								loop={Infinity}
 								steps={[
-									"Application Development Associate",
+									"Packaged App Development Associate",
 									500,
 									"Web Developer",
 									1000,
